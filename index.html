@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accordion demo page</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/accordion.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/utils.js"></script>
+    <script src="./js/accordion.js"></script>
+</head>
+
+<body>
+    <h1>Accordion demo page</h1>
+    <div id="my-accordion"></div>
+
+    <script>
+        type = "text/javascript"
+        var options = {
+            container: 'my-accordion',
+            mainTitle: 'Main accordion title', //optional title header
+            panels: [{
+                    title: "My profile",
+                    subtitle: "Update your profile information", //optional subtitle
+                    content: '<p>HTML content for this panel </p>' //HTML to inject as panel content
+                }, {
+                    title: 'Change password',
+                    subtitle: 'Change your login password',
+                    content: '<p> HTML content for this panel </p> '
+                }
+                //other panels here
+            ]
+        };
+        var accordion = new Accordion(options);
+    </script>
+</body>
+
+
+</html>
