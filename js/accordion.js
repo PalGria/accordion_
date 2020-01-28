@@ -7,7 +7,7 @@ class Accordion {
         this.initAccordion();
     }
     onClick = () => {
-            console.log(this); // this will be the HTML div-element
+            console.log(this);
         }
         //This function inits and refresh the accordion
     initAccordion = () => {
