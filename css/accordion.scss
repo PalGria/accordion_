@@ -1,0 +1,45 @@
+.custom__accordion {
+    background-color: white;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.accordion__panel {}
+
+.accordion__title {
+    font-size: 18px;
+    font-weight: normal;
+    color: #333;
+    padding-left: 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+h4.panel__title {
+    font-size: 14px;
+    color: #0465ac;
+    margin: 5px 5px 5px 0px;
+}
+
+h5.panel__subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 5px 5px 5px 0px;
+    color: #999;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.panel__arrow {
+    margin: 0 25px 0 25px;
+}
+
+.my-accordionpanel__content {}
+
+@media (min-width: 768px) {
+    .custom__accordion {
+        width: 70%;
+    }
+}
