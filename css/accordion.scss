@@ -2,10 +2,13 @@
     background-color: white;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
-.accordion__panel {}
+.accordion__panel {
+    display: grid;
+    grid-template-columns: 25px repeat(5, auto 30px) 25px;
+}
 
 .accordion__title {
     font-size: 18px;
@@ -21,6 +24,8 @@ h4.panel__title {
     font-size: 14px;
     color: #0465ac;
     margin: 5px 5px 5px 0px;
+    grid-column-start: 2;
+    grid-column-end: 2;
 }
 
 h5.panel__subtitle {
@@ -30,13 +35,22 @@ h5.panel__subtitle {
     color: #999;
     white-space: nowrap;
     overflow: hidden;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
 
 .panel__arrow {
-    margin: 0 25px 0 25px;
+    grid-column-start: 11;
+    grid-column-end: 11;
+    text-align: center;
 }
 
-.my-accordionpanel__content {}
+.panel__content {
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
 
 @media (min-width: 768px) {
     .custom__accordion {

@@ -23,7 +23,7 @@ class Accordion {
             let button = newElement("div", "panel__arrow", "", "<i class='material-icons'> keyboard_arrow_down </i>")
             button.addEventListener('click', ev => this.onClick(ev, i));
             domPanel.appendChild(button);
-            domPanel.appendChild(newElement("div", this.id + "panel__content", this.id + "panel__content" + i, panel.content, "display:none"));
+            domPanel.appendChild(newElement("div", "panel__content", this.id + "panel__content" + i, panel.content, "display:none"));
             return domPanel;
         }
         //This function inits and refresh the accordion
