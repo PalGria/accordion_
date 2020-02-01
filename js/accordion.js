@@ -11,7 +11,9 @@ class Accordion {
     onClick = (ev, i) => {
         let target = document.getElementById(this.id + "panel__content" + i);
         let arrow = document.getElementById(this.id + `panel__arrow${i}`).childNodes[0];
+        //Check if is collapsed or unccollapsed
         if (!target.classList.contains('collapsed')) {
+            //We change target class, and the arrow pointing
             target.classList.add('collapsed');
             target.parentElement.classList.remove('uncollapsed');
             arrow.innerHTML = "keyboard_arrow_down";
