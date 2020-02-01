@@ -10,12 +10,16 @@ class Accordion {
     }
     onClick = (ev, i) => {
         let target = document.getElementById(this.id + "panel__content" + i);
+        let arrow = document.getElementById(this.id + `panel__arrow${i}`).childNodes[0];
         if (!target.classList.contains('collapsed')) {
             target.classList.add('collapsed');
             target.parentElement.classList.remove('uncollapsed');
+            arrow.innerHTML = "keyboard_arrow_down";
         } else {
             target.classList.remove('collapsed');
             target.parentElement.classList.add('uncollapsed');
+            arrow.innerHTML = "keyboard_arrow_up";
+
 
         }
     }
@@ -28,7 +32,7 @@ class Accordion {
                 domPanel.classList.add("__without-description")
             }
             //Button for collapse / uncollapse 
-            let button = newElement("div", "panel__arrow", "", "<i class='material-icons'> keyboard_arrow_down </i>")
+            let button = newElement("div", "panel__arrow", this.id + `panel__arrow${i}`, "<i class='material-icons'> keyboard_arrow_down </i>")
             button.addEventListener('click', ev => this.onClick(ev, i));
             domPanel.appendChild(button);
             domPanel.appendChild(newElement("div", "panel__content collapsed", this.id + `panel__content${i}`, panel.content));
