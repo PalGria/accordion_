@@ -9,21 +9,29 @@ class Accordion {
         this.initAccordion();
     }
     onClick = (ev, i) => {
-        if (document.getElementById(this.id + "panel__content" + i).style.visibility != "hidden") {
-            document.getElementById(this.id + "panel__content" + i).style.visibility = "hidden";
+        let target = document.getElementById(this.id + "panel__content" + i);
+        if (!target.classList.contains('collapsed')) {
+            target.classList.add('collapsed');
+            target.parentElement.classList.remove('uncollapsed');
         } else {
-            document.getElementById(this.id + "panel__content" + i).style.visibility = "visible";
+            target.classList.remove('collapsed');
+            target.parentElement.classList.add('uncollapsed');
+
         }
     }
     createPanel = (panel, i) => {
             let domPanel = newElement("div", "accordion__panel", "panel" + i);
             domPanel.appendChild(newElement("h4", "panel__title", "", panel.title));
-            domPanel.appendChild(newElement("h5", "panel__subtitle", "", panel.subtitle));
+            if (panel.subtitle) {
+                domPanel.appendChild(newElement("h5", "panel__subtitle", "", panel.subtitle));
+            } else {
+                domPanel.classList.add("__without-description")
+            }
             //Button for collapse / uncollapse 
             let button = newElement("div", "panel__arrow", "", "<i class='material-icons'> keyboard_arrow_down </i>")
             button.addEventListener('click', ev => this.onClick(ev, i));
             domPanel.appendChild(button);
-            domPanel.appendChild(newElement("div", "panel__content", this.id + "panel__content" + i, panel.content, "visibility :hidden"));
+            domPanel.appendChild(newElement("div", "panel__content collapsed", this.id + `panel__content${i}`, panel.content));
             return domPanel;
         }
         //This function inits and refresh the accordion
@@ -32,11 +40,14 @@ class Accordion {
         this.container.innerHTML = "";
         //Then we add the title to the Accordion
         this.container.appendChild(newElement("div", "accordion__title", "", this.mainTitle));
+        this.container.appendChild(newElement("hr"));
         //First iterates the panels
         for (let i = 0; i < this.panels.length; i++) {
             let panel = this.panels[i];
             //for each panel we write in the DOM a new DIV, with the title, the subtitle, the content and the action button. 
             this.container.appendChild(this.createPanel(panel, i));
+            this.container.appendChild(newElement("hr"));
+
         }
     }
     collapse = (target) => {
