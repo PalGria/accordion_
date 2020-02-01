@@ -14,7 +14,7 @@
     font-size: 18px;
     font-weight: normal;
     color: #333;
-    padding-left: 10px;
+    padding-left: 25px;
     height: 60px;
     display: flex;
     align-items: center;
@@ -50,6 +50,8 @@ h5.panel__subtitle {
 .panel__content {
     grid-column-start: 2;
     grid-column-end: 2;
+    transition: height 1s, padding 1s, visibility 1s, opacity 0.5s ease-out;
+    background-color: red;
 }
 
 @media (min-width: 768px) {
