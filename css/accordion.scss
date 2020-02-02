@@ -13,8 +13,12 @@
     transition: margin 0.5s ease-out;
 }
 
-.accordion__panel.__without-description {
+.__without-description {
     height: 50px;
+}
+
+.__without-description.uncollapsed {
+    height: auto;
 }
 
 .accordion__title {
@@ -40,6 +44,10 @@ h4.panel__title {
     transition: font-size 0.5s;
 }
 
+.__without-description h4 {
+    align-self: center;
+}
+
 h5.panel__subtitle {
     font-size: 12px;
     font-weight: 500;
@@ -56,7 +64,7 @@ h5.panel__subtitle {
 .panel__arrow {
     grid-column-start: 7;
     grid-column-end: 7;
-    align-self: end;
+    align-self: center;
     text-align: center;
     color: #0465ac;
     cursor: pointer;
@@ -68,7 +76,7 @@ h5.panel__subtitle {
 
 .collapsed {
     display: none;
-    transition: margin 0.5s ease-in;
+    transition: margin 0.5s ease-out;
 }
 
 .uncollapsed {

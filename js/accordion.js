@@ -20,6 +20,8 @@ class Accordion {
         } else {
             target.classList.remove('collapsed');
             target.parentElement.classList.add('uncollapsed');
+            target.parentElement.classList.remove('collapsed');
+
             arrow.innerHTML = "keyboard_arrow_up";
         }
     }
