@@ -11,7 +11,6 @@
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
   border: 1px solid lightgrey;
   transition: margin 0.5s ease-out;
-  transition: margin 0.5s ease-in;
 }
 
 .accordion__panel.__without-description {
@@ -69,20 +68,14 @@ h5.panel__subtitle {
 
 .collapsed {
   display: none;
-  transition: height 1s, padding 1s, visibility 1s, opacity 0.5s ease-out;
-  -webkit-animation: slide-up 0.5s ease-out;
-}
-
-.uncollapsedNeighbour {
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+  transition: margin 0.5s ease-in;
 }
 
 .uncollapsed {
   height: auto;
   padding-top: 20px;
   margin: 30px 0 30px 0;
-  transition: height 1s, padding 1s, visibility 1s, opacity 0.5s ease-out;
-  -webkit-animation: slide-down 0.5s ease-out;
+  transition: margin 0.5s ease-in;
 }
 
 .uncollapsed .panel__title {
